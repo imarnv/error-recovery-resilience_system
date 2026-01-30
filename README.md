@@ -47,6 +47,15 @@ The `src/main.py` script runs a simulation scenario:
     - `logs/app.log`: Detailed application logs.
     - `logs/google_sheets_mock.csv`: Mock Google Sheets entries.
 
-## Configuration
+## Configuration!
+
 
 All configurable parameters are in `src/config.py`.
+
+### Workflow Diagram
+![WhatsApp Image 2026-01-30 at 12 24 32](https://github.com/user-attachments/assets/fe7e44ca-4295-4551-aaa8-16693a7ca65d)
+
+![WhatsApp Image 2026-01-30 at 12 24 32 (1)](https://github.com/user-attachments/assets/bc68105b-048b-4ce5-9be7-f00ff4f8d7de)
+
+
+
