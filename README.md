@@ -1,6 +1,6 @@
 # Error Recovery & Resilience System
 
-This project implements a robust error handling system for an AI Call Agent, featuring **Retry Logic**, **Circuit Breakers**, **Structured Logging**, and **Alerting**.
+This project demostrates an error handling system for an AI Call Agent featuring **Retry Logic**, **Circuit Breakers**, **Structured Logging** and **Alerting**.
 
 ## Architecture
 
@@ -16,23 +16,23 @@ The system is designed with a modular architecture:
 
 ## Key Features
 
-1.  **Transient Error Handling**: Automatically retries failed calls with exponential backoff.
+1.  **Transient Error Handling**: Automatically retries failed calls with some time backoff.
 2.  **Circuit Breaker**: Fails fast after a configured number of failures (`config.py`) to protect the system and dependency.
-3.  **Graceful Degradation**: Skips calls when the circuit is OPEN, ensuring the system doesn't hang.
-4.  **Auto-Recovery**: Periodic health checks detect when a service is back online and resets the circuit breaker.
+3.  **Graceful Degradation**: Skips calls when the circuit is OPEN while ensuring the system doesn't hang.
+4.  **Auto-Recovery**: Periodic health checks detects when service is back online and resets the circuit breaker.
 
 ## Simulation Scenario
 
-The `src/main.py` script runs a mandatory simulation scenario:
+The `src/main.py` script runs a simulation scenario:
 1.  **Happy Path**: Successful calls to ElevenLabs.
 2.  **Failure Injection**: Simulates a 503 Service Unavailable.
 3.  **Resilience**:
     - Detects error.
-    - Retries 3 times (Exponential Backoff).
+    - Retries 3 times (time backoff).
     - Opens Circuit Breaker after threshold.
     - Triggers Alerts.
 4.  **Degradation**: Skips subsequent calls immediately.
-5.  **Recovery**: Simulates service restoration, Health Check detects it, and Circuit Breaker is reset.
+5.  **Recovery**: Simulates service restoration then Health Check detects it and Circuit Breaker is reset.
 6.  **Resume**: Normal processing resumes.
 
 ## How to Run
